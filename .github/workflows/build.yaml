@@ -37,4 +37,4 @@ jobs:
         run: |
           ls -la
           curl -Ls https://sh.jbang.dev | bash -s - app setup
-          ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties sakila-oas-specs/specs
+          ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties spring-boot-openapi-validator/sakila-oas-specs/specs
