@@ -33,11 +33,11 @@
         </configuration>
       </plugin>
 
-      <!-- OpenAPI Tools: Validator & Code Generator -->
+      <!-- OpenAPI Tools: Validator -->
       <plugin>
         <groupId>org.openapitools.openapistylevalidator</groupId>
         <artifactId>openapi-style-validator-maven-plugin</artifactId>
-        <version>1.7</version>
+        <version>1.8</version>
         <executions>
           <execution>
             <id>actor</id>
