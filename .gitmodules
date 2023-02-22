@@ -1,0 +1,3 @@
+[submodule "sakila-oas-specs"]
+	path = sakila-oas-specs
+	url = https://github.com/jabrena/sakila-oas-specs

@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: graalvm/setup-graalvm@v1
         with:
           version: 'latest'
@@ -28,3 +31,10 @@ jobs:
         run: |
           curl -Ls https://sh.jbang.dev | bash -s - app setup
           ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties spring-boot-openapi-validator/specs
+
+      - name: OAS Validation Git Submodule
+        shell: bash
+        run: |
+          ls -la
+          curl -Ls https://sh.jbang.dev | bash -s - app setup
+          ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties spring-boot-openapi-validator/sakila-oas-specs/specs
