@@ -32,5 +32,6 @@ jobs:
       - name: OAS Validation Git Submodule
         shell: bash
         run: |
+          ls -la
           curl -Ls https://sh.jbang.dev | bash -s - app setup
           ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties spring-boot-openapi-validator/sakila-oas-specs
