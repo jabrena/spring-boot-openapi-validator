@@ -23,3 +23,8 @@ jobs:
         run: |
           ./mvnw --batch-mode --no-transfer-progress -B verify
 
+      - name: OAS Validation
+        shell: bash
+        run: |
+          curl -Ls https://sh.jbang.dev | bash -s - app setup
+          ~/.jbang/bin/jbang .github/OASValidator.java .github/config.properties spring-boot-openapi-validator/specs

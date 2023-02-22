@@ -1,4 +1,6 @@
-# spring-boot-openapi-validator
+# Spring-boot Openapi validator
+
+[![CI Builds](https://github.com/jabrena/spring-boot-openapi-validator/actions/workflows/build.yaml/badge.svg)](https://github.com/jabrena/spring-boot-openapi-validator/actions/workflows/build.yaml)
 
 # Other commands
 
