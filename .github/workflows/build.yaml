@@ -22,6 +22,12 @@ jobs:
           components: 'native-image'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install -g @apidevtools/swagger-cli
+      - run: swagger-cli bundle complex-specs/openapi.yaml --outfile demo.yaml --type=yaml
+
       - name: Maven Verify
         run: |
           ./mvnw --batch-mode --no-transfer-progress -B verify

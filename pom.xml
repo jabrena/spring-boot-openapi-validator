@@ -33,12 +33,38 @@
         </configuration>
       </plugin>
 
-      <!-- OpenAPI Tools: Validator -->
       <plugin>
         <groupId>org.openapitools.openapistylevalidator</groupId>
         <artifactId>openapi-style-validator-maven-plugin</artifactId>
         <version>1.8</version>
         <executions>
+          <execution>
+            <id>complex2</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>validate</goal>
+            </goals>
+            <configuration>
+              <inputFile>
+                ${project.basedir}/demo.yaml
+              </inputFile>
+              <validateInfoLicense>false</validateInfoLicense>
+              <validateInfoDescription>false</validateInfoDescription>
+              <validateInfoContact>false</validateInfoContact>
+              <validateOperationOperationId>true</validateOperationOperationId>
+              <validateOperationDescription>false</validateOperationDescription>
+              <validateOperationTag>true</validateOperationTag>
+              <validateOperationSummary>false</validateOperationSummary>
+              <validateModelPropertiesExample>false</validateModelPropertiesExample>
+              <validateModelNoLocalDef>true</validateModelNoLocalDef>
+              <pathNamingConvention>HyphenCase</pathNamingConvention>
+              <parameterNamingConvention>CamelCase</parameterNamingConvention>
+              <headerNamingConvention>UnderscoreCase</headerNamingConvention>
+              <propertyNamingConvention>CamelCase</propertyNamingConvention>
+              <validateNaming>false</validateNaming>
+              <ignoreHeaderXNaming>true</ignoreHeaderXNaming>
+            </configuration>
+          </execution>
           <execution>
             <id>actor</id>
             <phase>validate</phase>
@@ -53,7 +79,7 @@
               <validateInfoDescription>false</validateInfoDescription>
               <validateInfoContact>false</validateInfoContact>
               <validateOperationOperationId>true</validateOperationOperationId>
-              <validateOperationDescription>false</validateOperationDescription><!-- * -->
+              <validateOperationDescription>false</validateOperationDescription>
               <validateOperationTag>true</validateOperationTag>
               <validateOperationSummary>false</validateOperationSummary>
               <validateModelPropertiesExample>false</validateModelPropertiesExample>
@@ -80,7 +106,7 @@
               <validateInfoDescription>false</validateInfoDescription>
               <validateInfoContact>false</validateInfoContact>
               <validateOperationOperationId>true</validateOperationOperationId>
-              <validateOperationDescription>false</validateOperationDescription><!-- * -->
+              <validateOperationDescription>false</validateOperationDescription>
               <validateOperationTag>true</validateOperationTag>
               <validateOperationSummary>false</validateOperationSummary>
               <validateModelPropertiesExample>false</validateModelPropertiesExample>
@@ -93,8 +119,9 @@
               <ignoreHeaderXNaming>true</ignoreHeaderXNaming>
             </configuration>
           </execution>
-        </executions>
+      </executions>
       </plugin>
+
     </plugins>
   </build>
 </project>
