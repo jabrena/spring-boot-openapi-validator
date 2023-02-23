@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '12'
       - run: npm install -g @apidevtools/swagger-cli
-      - run: swagger-cli bundle complex-specs/openapi.yml --outfile demo.yaml --type=yaml
+      - run: swagger-cli bundle complex-specs/openapi.yaml --outfile demo.yaml --type=yaml
 
       - name: Maven Verify
         run: |
